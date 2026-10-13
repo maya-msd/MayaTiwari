@@ -117,78 +117,204 @@
     </section>
 
     <!-- Projects Section -->
+    <!-- Projects Section -->
     <section id="projects" class="section">
       <div class="container">
         <h2 class="section-title">Selected Projects &amp; Implementations</h2>
-        <div class="projects-grid">
+        
+        <!-- Primary Enterprise & SAP Implementations -->
+        <div class="projects-block">
+          <h3 class="projects-category-title">SAP Enterprise &amp; Cloud Implementations</h3>
+          <div class="projects-grid">
 
-          <!-- Project 1: SAP-MM-EV-Project -->
-          <article class="project-card">
-            <div class="project-header">
-              <span class="project-tag">S/4HANA Sourcing &amp; Procurement</span>
-              <h3 class="project-title">SAP MM EV Project (Procure-to-Pay Lifecycle)</h3>
-            </div>
-            <div class="project-body">
-              <p><strong>Purpose:</strong> Complete organizational configuration and master data setup within SAP S/4HANA MM to support procurement operations across the P2P lifecycle.</p>
-              <p><strong>Contributions:</strong></p>
-              <ul class="project-list">
-                <li>Configured enterprise structure components: Plants, Storage Locations, Purchasing Organizations, and Purchasing Groups.</li>
-                <li>Conducted master data configuration for Material Master and Business Partner (BP / Vendor Master).</li>
-                <li>Configured document types and release strategies for Purchase Requisitions (PR) and Purchase Orders (PO).</li>
-                <li>Mapped material movements and invoice verification workflows (MIGO, MIRO).</li>
-              </ul>
-              <p><strong>Technologies:</strong> SAP S/4HANA MM, Business Partner (BP), P2P Lifecycle, PR/PO Release Strategies, MIGO, MIRO</p>
-            </div>
-            <div class="project-footer">
-              <a href="https://github.com/maya-msd/SAP-MM-EV-Project" class="btn btn-secondary btn-sm" target="_blank" rel="noopener noreferrer">View Repository</a>
-            </div>
-          </article>
+            <!-- Project 1: RAP Unmanaged Travel Application -->
+            <article class="project-card">
+              <div class="project-header">
+                <span class="project-tag">Modern ABAP Cloud &amp; RAP</span>
+                <h4 class="project-title">RAP Travel Application (Unmanaged Scenario)</h4>
+              </div>
+              <div class="project-body">
+                <p><strong>Purpose:</strong> Full end-to-end RAP unmanaged transactional application on SAP BTP connecting custom master views with standard clean-core entities for Fiori Elements consumption.</p>
+                <p><strong>Contributions:</strong></p>
+                <ul class="project-list">
+                  <li>Built customer and agency interface CDS views (zbtp_i_u_customer, zbtp_i_u_Agency) with associations to standard I_Country.</li>
+                  <li>Developed the root consumption CDS view (zbtp_i_u_Travel) with associations to _Agency, _Customer, and I_Currency.</li>
+                  <li>Defined unmanaged behavior definition with lock master, global create authorization, and read-only TravelId.</li>
+                  <li>Constructed Service Definition (ZBTP_I_U_TRAVEL_SD) and published OData V2 UI Service Binding (ZBTP_I_U_TRAVEL_SB) for Fiori Elements preview.</li>
+                </ul>
+                <p><strong>Technologies:</strong> SAP RAP, ABAP Cloud, CDS Views, I_Country, I_Currency, OData V2 UI, SAP BTP, Eclipse ADT</p>
+              </div>
+              <div class="project-footer">
+                <a href="https://github.com/maya-msd/SAP-RAP-Travel-Agency-Unmanaged" class="btn btn-secondary btn-sm" target="_blank" rel="noopener noreferrer">View Repository</a>
+              </div>
+            </article>
 
-          <!-- Project 2: RAP, ABAP Cloud & BTP -->
-          <article class="project-card">
-            <div class="project-header">
-              <span class="project-tag">Modern ABAP Cloud</span>
-              <h3 class="project-title">SAP ABAP Cloud, RAP &amp; SAP BTP Implementation</h3>
-            </div>
-            <div class="project-body">
-              <p><strong>Purpose:</strong> Modernization of custom transactional logic and data exposure utilizing SAP BTP, ABAP Cloud, and clean-core development standards.</p>
-              <p><strong>Contributions:</strong></p>
-              <ul class="project-list">
-                <li>Built RESTful Application Programming (RAP) business objects in SAP ABAP Cloud and SAP BTP environments.</li>
-                <li>Engineered data models using Core Data Services (CDS) Views for analytical projections, aggregations, and UI annotations.</li>
-                <li>Implemented ABAP Managed Database Procedures (AMDP) to execute data-intensive processing directly in the SAP HANA database layer.</li>
-                <li>Applied clean-core standards by leveraging released SAP standard APIs for on-stack and side-by-side extensibility.</li>
-              </ul>
-              <p><strong>Technologies:</strong> ABAP Cloud, RAP, Core Data Services (CDS), AMDP, SAP BTP, Eclipse ADT</p>
-            </div>
-            <div class="project-footer">
-              <span class="text-muted">Hands-on implementation (GitHub upload in progress)</span>
-            </div>
-          </article>
+            <!-- Project 2: CDS Table Function AMDP -->
+            <article class="project-card">
+              <div class="project-header">
+                <span class="project-tag">SAP HANA &amp; Code Pushdown</span>
+                <h4 class="project-title">CDS Table Function via AMDP (Native SQLScript Engine)</h4>
+              </div>
+              <div class="project-body">
+                <p><strong>Purpose:</strong> Executing database-level procedural date arithmetic and dynamic tiered interest calculations that exceed standard CDS view capabilities by pushing logic down to SAP HANA.</p>
+                <p><strong>Contributions:</strong></p>
+                <ul class="project-list">
+                  <li>Designed a CDS Table Function definition (zcds_tbf) establishing a typed client-dependent schema.</li>
+                  <li>Implemented an AMDP class with if_amdp_marker_hdb and read-only SQLScript database function.</li>
+                  <li>Computed invoice aging intervals using native DAYS_BETWEEN() and evaluated tiered interest rate brackets (3%, 4%, 5%).</li>
+                  <li>Queried calculation results via modern ABAP consumer reports using Open SQL inline declarations.</li>
+                </ul>
+                <p><strong>Technologies:</strong> CDS Table Functions, AMDP, SAP HANA SQLScript, if_amdp_marker_hdb, Eclipse ADT</p>
+              </div>
+              <div class="project-footer">
+                <a href="https://github.com/maya-msd/SAP-CDS-Table-Function-AMDP" class="btn btn-secondary btn-sm" target="_blank" rel="noopener noreferrer">View Repository</a>
+              </div>
+            </article>
 
-          <!-- Project 3: Infosys SAP CRM Enhancements -->
-          <article class="project-card">
-            <div class="project-header">
-              <span class="project-tag">Enterprise Integration</span>
-              <h3 class="project-title">Enterprise SAP CRM Technical Enhancements (Infosys)</h3>
-            </div>
-            <div class="project-body">
-              <p><strong>Purpose:</strong> Development, enhancement, and production maintenance of custom ABAP logic, reporting, and cross-system interfaces for enterprise SAP CRM systems.</p>
-              <p><strong>Contributions:</strong></p>
-              <ul class="project-list">
-                <li>Developed custom ABAP enhancements utilizing BAdIs, BAPIs, User Exits, and Function Modules.</li>
-                <li>Engineered Classical and Interactive ALV Reports to support business operations and executive reporting.</li>
-                <li>Implemented custom SAP WebUI enhancements to improve user transaction workflows and screen field behaviors.</li>
-                <li>Monitored cross-system interfaces leveraging IDoc and RFC technologies, and performed runtime debugging and ST05 SQL trace performance tuning.</li>
-              </ul>
-              <p><strong>Result:</strong> Delivered critical enterprise SAP CRM enhancements on schedule with zero cutover defects.</p>
-              <p><strong>Technologies:</strong> SAP CRM, Classical/Interactive ALV, BAdIs, BAPIs, IDocs, RFC, WebUI, ST05 Trace</p>
-            </div>
-          </article>
+            <!-- Project 3: Vendor & Purchase Order CDS Analytics -->
+            <article class="project-card">
+              <div class="project-header">
+                <span class="project-tag">S/4HANA MM &amp; ABAP CDS</span>
+                <h4 class="project-title">Vendor &amp; Purchase Order CDS Analytics (LFA1, EKKO, EKPO)</h4>
+              </div>
+              <div class="project-body">
+                <p><strong>Purpose:</strong> Multi-table relational data modeling across Vendor Master and Purchasing documents to analyze procurement line items filtered by dynamic document number ranges.</p>
+                <p><strong>Contributions:</strong></p>
+                <ul class="project-list">
+                  <li>Constructed relational inner joins across LFA1 (Vendor), EKKO (PO Header), and EKPO (PO Item).</li>
+                  <li>Implemented input parameters (PO_L and PO_H) with database-level boundary evaluation using BETWEEN syntax.</li>
+                  <li>Engineered an ABAP consumer report binding SELECT-OPTIONS range tables to CDS view input parameters.</li>
+                  <li>Applied modern ABAP SQL with inline table declarations and structured result formatting.</li>
+                </ul>
+                <p><strong>Technologies:</strong> SAP CDS Views, ABAP SQL, LFA1, EKKO, EKPO, Eclipse ADT</p>
+              </div>
+              <div class="project-footer">
+                <a href="https://github.com/maya-msd/SAP-CDS-Vendor-PO-Analytics" class="btn btn-secondary btn-sm" target="_blank" rel="noopener noreferrer">View Repository</a>
+              </div>
+            </article>
 
+            <!-- Project 4: Parameterized Customer CDS View -->
+            <article class="project-card">
+              <div class="project-header">
+                <span class="project-tag">S/4HANA &amp; CDS Modeling</span>
+                <h4 class="project-title">Customer Analytics Parameterized CDS View</h4>
+              </div>
+              <div class="project-body">
+                <p><strong>Purpose:</strong> Single-parameter customer dataset filtering with built-in string manipulations and conditional logic executed directly in the database layer.</p>
+                <p><strong>Contributions:</strong></p>
+                <ul class="project-list">
+                  <li>Built CDS view entity (zcst_invoice12) with input parameter signature (ctry : land1).</li>
+                  <li>Utilized built-in functions concat_with_space(), length(), and CASE statements for data normalization.</li>
+                  <li>Created ABAP consumer program using host variable binding (@p_land1) and inline declarations.</li>
+                </ul>
+                <p><strong>Technologies:</strong> Core Data Services (CDS), KNA1, Open SQL, Eclipse ADT</p>
+              </div>
+              <div class="project-footer">
+                <a href="https://github.com/maya-msd/SAP-CDS-Parameterized-View" class="btn btn-secondary btn-sm" target="_blank" rel="noopener noreferrer">View Repository</a>
+              </div>
+            </article>
+
+            <!-- Project 5: SAP-MM-EV-Project -->
+            <article class="project-card">
+              <div class="project-header">
+                <span class="project-tag">S/4HANA Sourcing &amp; Procurement</span>
+                <h4 class="project-title">SAP MM EV Project (Procure-to-Pay Lifecycle)</h4>
+              </div>
+              <div class="project-body">
+                <p><strong>Purpose:</strong> Complete organizational configuration and master data setup within SAP S/4HANA MM to support procurement operations across the P2P lifecycle.</p>
+                <p><strong>Contributions:</strong></p>
+                <ul class="project-list">
+                  <li>Configured enterprise structure components: Plants, Storage Locations, Purchasing Organizations, and Purchasing Groups[cite: 1].</li>
+                  <li>Conducted master data configuration for Material Master and Business Partner (BP / Vendor Master)[cite: 1].</li>
+                  <li>Configured document types and release strategies for Purchase Requisitions (PR) and Purchase Orders (PO)[cite: 1].</li>
+                  <li>Mapped material movements and invoice verification workflows (MIGO, MIRO)[cite: 1].</li>
+                </ul>
+                <p><strong>Technologies:</strong> SAP S/4HANA MM, Business Partner (BP), P2P Lifecycle, PR/PO Release Strategies, MIGO, MIRO[cite: 1]</p>
+              </div>
+              <div class="project-footer">
+                <a href="https://github.com/maya-msd/SAP-MM-EV-Project" class="btn btn-secondary btn-sm" target="_blank" rel="noopener noreferrer">View Repository</a>
+              </div>
+            </article>
+
+            <!-- Project 6: Infosys SAP CRM Enhancements -->
+            <article class="project-card">
+              <div class="project-header">
+                <span class="project-tag">Enterprise Integration</span>
+                <h4 class="project-title">Enterprise SAP CRM Technical Enhancements (Infosys)</h4>
+              </div>
+              <div class="project-body">
+                <p><strong>Purpose:</strong> Development, enhancement, and production maintenance of custom ABAP logic, reporting, and cross-system interfaces for enterprise SAP CRM systems[cite: 1].</p>
+                <p><strong>Contributions:</strong></p>
+                <ul class="project-list">
+                  <li>Developed custom ABAP enhancements utilizing BAdIs, BAPIs, User Exits, and Function Modules[cite: 1].</li>
+                  <li>Engineered Classical and Interactive ALV Reports to support business operations and executive reporting[cite: 1].</li>
+                  <li>Implemented custom SAP WebUI enhancements to improve user transaction workflows and screen field behaviors[cite: 1].</li>
+                  <li>Monitored cross-system interfaces leveraging IDoc and RFC technologies, and performed runtime debugging and ST05 SQL trace performance tuning[cite: 2].</li>
+                </ul>
+                <p><strong>Result:</strong> Delivered critical enterprise SAP CRM enhancements on schedule with zero cutover defects[cite: 2].</p>
+                <p><strong>Technologies:</strong> SAP CRM, Classical/Interactive ALV, BAdIs, BAPIs, IDocs, RFC, WebUI, ST05 Trace[cite: 1, 2]</p>
+              </div>
+            </article>
+
+          </div>
         </div>
+
+        <!-- Programming & Instructional Projects -->
+        <div class="projects-block subsection-block">
+          <h3 class="projects-category-title">Programming &amp; Instructional Projects</h3>
+          <p class="subsection-description">
+            Interactive web applications and machine learning integrations developed in conjunction with live technical instruction and curriculum delivery at WhiteHat Jr[cite: 2].
+          </p>
+          <div class="projects-grid two-column-grid">
+
+            <!-- Project 7: Project_doodlenet -->
+            <article class="project-card">
+              <div class="project-header">
+                <span class="project-tag">Machine Learning &amp; Web</span>
+                <h4 class="project-title">Project DoodleNet</h4>
+              </div>
+              <div class="project-body">
+                <p><strong>Purpose:</strong> Web-based interactive application incorporating machine learning models for real-time doodle recognition and algorithmic problem-solving demonstrations[cite: 2].</p>
+                <p><strong>Contributions:</strong></p>
+                <ul class="project-list">
+                  <li>Engineered user interface and canvas interaction using HTML5, CSS3, and JavaScript.</li>
+                  <li>Integrated the DoodleNet machine learning model for pattern classification and interactive prediction.</li>
+                  <li>Utilized in live coding instruction to demonstrate ML model behavior and interactive DOM event handling[cite: 2].</li>
+                </ul>
+                <p><strong>Technologies:</strong> HTML, CSS, JavaScript, DoodleNet Model</p>
+              </div>
+              <div class="project-footer">
+                <a href="https://github.com/maya-msd/Project_doodlenet" class="btn btn-secondary btn-sm" target="_blank" rel="noopener noreferrer">View Repository</a>
+              </div>
+            </article>
+
+            <!-- Project 8: Project_Posenet -->
+            <article class="project-card">
+              <div class="project-header">
+                <span class="project-tag">Computer Vision &amp; Web</span>
+                <h4 class="project-title">Project PoseNet</h4>
+              </div>
+              <div class="project-body">
+                <p><strong>Purpose:</strong> Browser-based visual tracking application demonstrating human body keypoint detection using the PoseNet model.</p>
+                <p><strong>Contributions:</strong></p>
+                <ul class="project-list">
+                  <li>Built responsive front-end layout and real-time canvas rendering using HTML, CSS, and JavaScript.</li>
+                  <li>Integrated PoseNet computer vision model to detect and track key body joints directly in the browser.</li>
+                  <li>Applied in instructional sessions to showcase computer vision fundamentals and object-oriented scripting[cite: 2].</li>
+                </ul>
+                <p><strong>Technologies:</strong> HTML, CSS, JavaScript, PoseNet Model</p>
+              </div>
+              <div class="project-footer">
+                <a href="https://github.com/maya-msd/Project_Posenet" class="btn btn-secondary btn-sm" target="_blank" rel="noopener noreferrer">View Repository</a>
+              </div>
+            </article>
+
+          </div>
+        </div>
+
       </div>
     </section>
+          
 
     <!-- Experience Section -->
     <section id="experience" class="section bg-light">
